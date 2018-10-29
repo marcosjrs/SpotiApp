@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
 
+## Recordar añadir el Client_ID y el Client_Secret en environments/environment.ts
+
+export const environment = {
+  production: false,
+  Client_ID: "XXXXXXXXXXX",
+  Client_Secret:"XXXXXXXXXXXXXXXXX"
+};
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
