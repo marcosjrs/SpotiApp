@@ -34,5 +34,14 @@ export class ClientSpotifyDataService {
                   map((data)=>data["artists"])
                 );
   }
+
+  getArtist( name:string ):Observable<any>{
+    return this.getQuery('artists/'+name).pipe(
+      map((data)=>{
+        console.log(data)
+        return data;
+      })
+    );
+  }
    
 }

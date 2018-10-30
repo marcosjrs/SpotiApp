@@ -1,3 +1,15 @@
-<p>
-  artist works!
-</p>
+<div class="card" *ngIf="artist">
+  <img class="card-img-top" [src]="artist.images | firstUrlOfImages:'assets/img/noimage.png'" alt="Imagen de {{artist.name}}">
+  <div class="card-body">
+    <h5 class="card-title">{{artist.name}} <a [href]="artist.external_urls.spotify"><i class="fas fa-external-link-alt"></i></a></h5>
+    <div class="card-text" *ngIf="artist.genres">
+      <span *ngFor="let genero of artist.genres" class="badge badge-primary">{{genero}}</span>
+    </div>
+    <div class="text-right">
+        <a routerLink="/home" class="card-link">Volver</a>
+      </div>
+  </div>
+</div>
+<app-loading *ngIf="this.showLoading"></app-loading>
+
+
