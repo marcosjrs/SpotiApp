@@ -9,12 +9,17 @@ import { Albums } from 'src/app/models/albums';
 })
 export class HomeComponent implements OnInit {
   albums:Albums;
+  showLoading:boolean;
 
   constructor(private spotifySvc:ClientSpotifyDataService) { 
   }
 
   ngOnInit() {
-    this.spotifySvc.getNewReleases().subscribe(albums=>this.albums=albums);
+    this.showLoading = true;
+    this.spotifySvc.getNewReleases().subscribe(albums=>{
+      this.albums=albums;
+      this.showLoading = false;
+    });
   }
 
 }

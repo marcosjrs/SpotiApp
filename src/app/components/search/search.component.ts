@@ -9,6 +9,7 @@ import { Artists } from 'src/app/models/artists';
 })
 export class SearchComponent implements OnInit {
   artists:Artists;
+  showLoading:boolean;
 
   constructor( private spotifySvc:ClientSpotifyDataService) { }
 
@@ -17,7 +18,11 @@ export class SearchComponent implements OnInit {
 
   buscar(termino:string){
     if(termino.length > 2){
-      this.spotifySvc.getArtists(termino).subscribe(artists=>this.artists = artists);
+      this.showLoading = true;
+      this.spotifySvc.getArtists(termino).subscribe(artists=>{
+        this.artists = artists
+        this.showLoading = false;
+      });
     }
   }
 

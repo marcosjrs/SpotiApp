@@ -3,6 +3,6 @@
     <input class="form-control" (keyup)="buscar(terminoInput.value)" #terminoInput placeholder="Buscar artista..." type="text" >
   </div>
 </div>
-
+<app-loading *ngIf="this.showLoading"></app-loading>
 <app-info [dataCollection]="artists">
 </app-info>

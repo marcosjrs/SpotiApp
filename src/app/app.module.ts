@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { ROUTES } from '../app.routes';
 import { FirstUrlOfImagesPipe } from './pipes/first-url-of-images.pipe';
 import { InfoComponent } from './components/shared/info/info.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { InfoComponent } from './components/shared/info/info.component';
     ArtistComponent,
     NavbarComponent,
     FirstUrlOfImagesPipe,
-    InfoComponent
+    InfoComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
