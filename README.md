@@ -1,15 +1,18 @@
 # SpotiApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
+Ejercicio de uno de los módulos del curso de Angular: De cero a experto. Con Angular 6.2.3 y Bootstrap 4.
 
-## RECORDAR AÑADIR el Client_ID y el Client_Secret en environments/environment.ts y environment.prod.ts
 
+## RECORDAR: Añadir el Client_ID y el Client_Secret en environments/environment.ts y environment.prod.ts
+
+```
 export const environment = {
   production: false,
   Client_ID: "XXXXXXXXXXX",
   Client_Secret:"XXXXXXXXXXXXXXXXX",
   Token:"XXXXXXXXXXXXX"
 };
+```
 
 ## Development server
 
