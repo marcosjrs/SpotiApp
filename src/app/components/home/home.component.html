@@ -1,3 +1,11 @@
-<p>
-  home works!
-</p>
+<div class="card-columns" *ngIf="this.albums && this.albums.items">
+  <div *ngFor="let cancion of this.albums.items" class="card">
+    <img class="card-img-top" [src]="cancion.images[0].url" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{cancion.name}}</h5>
+      <div class="card-text">
+        <span *ngFor="let artista of cancion.artists" class="badge badge-primary">{{artista.name}}</span>
+      </div>
+    </div>
+  </div>
+</div>
