@@ -1,7 +1,7 @@
 import { Artist } from "./artist";
 import { Image } from "./image";
 
-export class Item {
+export class Song {
     constructor(
         public album_type:string,
         public artists: Artist[],

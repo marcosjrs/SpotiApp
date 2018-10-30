@@ -1,4 +1,3 @@
-import { Item } from "./item";
 import { Artist } from "./artist";
 
 export class Artists {

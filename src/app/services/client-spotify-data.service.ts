@@ -7,6 +7,10 @@ import { map,throttleTime } from 'rxjs/operators';
 import { Artist } from '../models/artist';
 import { Artists } from '../models/artists';
 
+const headers = new HttpHeaders({
+  "Authorization":"Bearer "+ environment.Token
+});
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,22 +18,7 @@ export class ClientSpotifyDataService {
 
   constructor(private httpClient:HttpClient) { }
 
-  getClientID(){
-    return environment.Client_ID;
-  }
-
-  getClientSecret(){
-    return environment.Client_Secret;
-  }
-
-  getToken(){
-    return environment.Token;
-  }
-
   getNewReleases():Observable<Albums>{
-    const headers = new HttpHeaders({
-      "Authorization":"Bearer "+ this.getToken()
-    });
     return this.httpClient
     .get('https://api.spotify.com/v1/browse/new-releases', {headers})
     .pipe(
@@ -40,9 +29,6 @@ export class ClientSpotifyDataService {
    
 
   getArtists( name:string ):Observable<Artists>{
-    const headers = new HttpHeaders({
-      "Authorization":"Bearer "+ this.getToken()
-    });
     return this.httpClient
     .get('https://api.spotify.com/v1/search?type=artist&q='+name, {headers})
     .pipe(
