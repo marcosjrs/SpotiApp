@@ -8,11 +8,28 @@ Ejercicio de uno de los módulos del curso de Angular: De cero a experto. Con An
 ```
 export const environment = {
   production: false,
-  Client_ID: "XXXXXXXXXXX",
-  Client_Secret:"XXXXXXXXXXXXXXXXX",
   Token:"XXXXXXXXXXXXX"
 };
 ```
+
+Para obtener este token, se puede realizar la petición POST:
+
+```
+https://accounts.spotify.com/api/token
+```
+
+con parametros x-www-form-urlencoded:
+
+```
+grant_type : client_credentials
+client_id : El client id de la app que se creó desde https://developer.spotify.com/dashboard/applications (tras crear cuenta)
+client_secret : El client secret de la app que se creó desde https://developer.spotify.com/dashboard/applications (tras crear cuenta)
+```
+
+Al hacer la petición nos devuelve el token.
+
+En el proyecto se adjunta la colección "Get Token Spotify.postman_collection.json" para importarla al postman, donde se puede ver la petición ( hay que modificar el client_id y el client_secret en la pestaña Body de la petición)
+
 
 ## Development server
 

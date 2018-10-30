@@ -1,0 +1,50 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Get Token Spotify",
+		"_postman_id": "f4425888-84d4-a9a3-46ec-4ad3c7eefef2",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Token de Spotify",
+			"request": {
+				"url": "https://accounts.spotify.com/api/token",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "5902e34ca15f4c3b8a3067600dd92a8e",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "173fdc1fbc3d4e6e8a2eed302d7510f0",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
