@@ -20,9 +20,13 @@ export class ClientSpotifyDataService {
     return environment.Client_Secret;
   }
 
+  getToken(){
+    return environment.Token;
+  }
+
   getNewReleases():Observable<Albums>{
     const headers = new HttpHeaders({
-      "Authorization":"Bearer BQDzNg1ZV8QS_kV5I7b6yyG2rCSiTWLY-JEEF-O_uLkHcoJ-gFkJOrtHyJu7sBdG7ohsdspVKe5pPKaZzLQ"
+      "Authorization":"Bearer "+ this.getToken()
     });
     return this.httpClient
     .get('https://api.spotify.com/v1/browse/new-releases', {headers})

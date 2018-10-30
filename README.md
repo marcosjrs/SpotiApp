@@ -2,12 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
 
-## Recordar añadir el Client_ID y el Client_Secret en environments/environment.ts
+## RECORDAR AÑADIR el Client_ID y el Client_Secret en environments/environment.ts y environment.prod.ts
 
 export const environment = {
   production: false,
   Client_ID: "XXXXXXXXXXX",
-  Client_Secret:"XXXXXXXXXXXXXXXXX"
+  Client_Secret:"XXXXXXXXXXXXXXXXX",
+  Token:"XXXXXXXXXXXXX"
 };
 
 ## Development server
