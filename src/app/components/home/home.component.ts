@@ -10,6 +10,7 @@ import { Albums } from 'src/app/models/albums';
 export class HomeComponent implements OnInit {
   albums:Albums;
   showLoading:boolean;
+  errMsg:string;
 
   constructor(private spotifySvc:ClientSpotifyDataService) { 
   }
@@ -19,7 +20,12 @@ export class HomeComponent implements OnInit {
     this.spotifySvc.getNewReleases().subscribe(albums=>{
       this.albums=albums;
       this.showLoading = false;
-    });
+      this.errMsg ="";
+    },
+    (err)=>{
+      this.errMsg = err.error.error.message;
+    }
+    );
   }
 
 }

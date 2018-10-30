@@ -1,2 +1,6 @@
-<app-loading *ngIf="this.showLoading"></app-loading>
+
+<div class="alert alert-danger" *ngIf="this.errMsg" role="alert">
+    {{this.errMsg}}
+</div>
+<app-loading *ngIf="this.showLoading && !this.errMsg"></app-loading>
 <app-info [dataCollection]="this.albums"> </app-info>
