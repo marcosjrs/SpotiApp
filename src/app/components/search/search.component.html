@@ -4,14 +4,5 @@
   </div>
 </div>
 
-<div class="card-columns mt-4" *ngIf="this.artists && this.artists.items">
-    <div *ngFor="let artista of this.artists.items" class="card">
-      <img class="card-img-top" [src]="artista.images | firstUrlOfImages:'assets/img/noimage.png'" alt="Imagen de {{artista.name}}">
-      <div class="card-body">
-        <h5 class="card-title">{{artista.name}}</h5>
-        <div class="card-text">
-          <!-- <span *ngFor="let artista of artista.artists" class="badge badge-primary">{{artista.name}}</span> -->
-        </div>
-      </div>
-    </div>
-  </div>
+<app-info [dataCollection]="artists">
+</app-info>

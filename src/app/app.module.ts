@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 
 import { ROUTES } from '../app.routes';
 import { FirstUrlOfImagesPipe } from './pipes/first-url-of-images.pipe';
+import { InfoComponent } from './components/shared/info/info.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FirstUrlOfImagesPipe } from './pipes/first-url-of-images.pipe';
     SearchComponent,
     ArtistComponent,
     NavbarComponent,
-    FirstUrlOfImagesPipe
+    FirstUrlOfImagesPipe,
+    InfoComponent
   ],
   imports: [
     BrowserModule,
