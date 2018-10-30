@@ -1,6 +1,7 @@
 <div class="card-columns" *ngIf="this.albums && this.albums.items">
   <div *ngFor="let cancion of this.albums.items" class="card">
-    <img class="card-img-top" [src]="cancion.images[0].url" alt="Card image cap">
+    <img class="card-img-top" *ngIf="cancion.images && cancion.images[0].url" [src]="cancion.images[0].url" alt="Imagen de {{cancion.name}}">
+    <img class="card-img-top" *ngIf="!cancion.images || !cancion.images[0].url" src="assets/img/noimage.png" alt="Imagen de {{cancion.name}}">
     <div class="card-body">
       <h5 class="card-title">{{cancion.name}}</h5>
       <div class="card-text">
