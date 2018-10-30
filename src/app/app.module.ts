@@ -14,6 +14,7 @@ import { ROUTES } from '../app.routes';
 import { FirstUrlOfImagesPipe } from './pipes/first-url-of-images.pipe';
 import { InfoComponent } from './components/shared/info/info.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
+import { urlSecurizadaSpotifyPipe } from './pipes/urlSecurizadaSpotify.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     NavbarComponent,
     FirstUrlOfImagesPipe,
     InfoComponent,
-    LoadingComponent
+    LoadingComponent,
+    urlSecurizadaSpotifyPipe
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,7 @@ import { Artist } from 'src/app/models/artist';
 export class ArtistComponent implements OnInit {
   id:number;
   artist:Artist;
+  tracks:any;
   showLoading:boolean;
 
   constructor(private route:ActivatedRoute, private spotifySvc:ClientSpotifyDataService) { }
@@ -19,6 +20,7 @@ export class ArtistComponent implements OnInit {
     this.showLoading = true;
     this.route.params.subscribe((params)=>{
       this.getArtist(params.id);
+      this.getTopTracks(params.id);
     });
   }
 
@@ -26,6 +28,12 @@ export class ArtistComponent implements OnInit {
     this.spotifySvc.getArtist(id).subscribe( artist => {
       this.artist = artist;
       this.showLoading = false;
+    } );
+  }
+
+  getTopTracks(id){
+    this.spotifySvc.getTopTracks(id).subscribe( tracks => {
+      this.tracks = tracks;
     } );
   }
 

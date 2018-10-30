@@ -43,5 +43,13 @@ export class ClientSpotifyDataService {
       })
     );
   }
+  
+  getTopTracks(id:string):Observable<any>{
+    return this.getQuery(`artists/${id}/top-tracks?country=us`).pipe(
+      map((data)=>{
+        return data['tracks'];
+      })
+    );
+  }
    
 }
