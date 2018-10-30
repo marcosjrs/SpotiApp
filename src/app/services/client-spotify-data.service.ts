@@ -3,7 +3,9 @@ import {environment} from '../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Albums } from '../models/albums';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map,throttleTime } from 'rxjs/operators';
+import { Artist } from '../models/artist';
+import { Artists } from '../models/artists';
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +36,18 @@ export class ClientSpotifyDataService {
       map((data)=>data["albums"])
     );
     ;
+  }
+   
+
+  getArtists( name:string ):Observable<Artists>{
+    const headers = new HttpHeaders({
+      "Authorization":"Bearer "+ this.getToken()
+    });
+    return this.httpClient
+    .get('https://api.spotify.com/v1/search?type=artist&q='+name, {headers})
+    .pipe(
+      map((data)=>data["artists"])
+    );
   }
    
 }
