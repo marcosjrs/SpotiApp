@@ -8,6 +8,7 @@ import { ArtistComponent } from './components/artist/artist.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { ROUTES } from '../app.routes';
 
@@ -21,6 +22,7 @@ import { ROUTES } from '../app.routes';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(ROUTES, {useHash: true}),
     HttpClientModule
   ],
