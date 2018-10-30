@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { ROUTES } from '../app.routes';
+import { FirstUrlOfImagesPipe } from './pipes/first-url-of-images.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ROUTES } from '../app.routes';
     HomeComponent,
     SearchComponent,
     ArtistComponent,
-    NavbarComponent
+    NavbarComponent,
+    FirstUrlOfImagesPipe
   ],
   imports: [
     BrowserModule,
